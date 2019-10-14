@@ -91,3 +91,25 @@ int	ft_abs(int n);
 int	ft_get_int_len(int n);
 void	ft_listdel(t_wordloc *list);
 ```
+
+### Test files ###
+
+I also made my own test files. Here's the list or you can look up the names in the `Makefile`
+
+```bash
+test test1 test2 test_strnstr test_strcmp test_strlcat test_memset
+test_bzero test_memcpy test_memccpy test_memmove test_memchr
+test_atoi test_putstr test_putnbr test_strnew test_memalloc
+test_memdel test_striter test_striteri test_strmap test_strmapi
+test_strequ test_strnequ test_strsub test_strtrim test_strjoin
+test_putendl test_fd test_itoa test_strsplit test_lstmap
+```
+To use tests you just need to type the following (you must be in the `libft/` folder not the `test/`):
+
+```bash
+how to use:
+  make <test_name>
+  
+example:
+  make test_itoa
+```
