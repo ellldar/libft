@@ -4,9 +4,7 @@ This is the first project that cadets are supposed to do when they start the 42 
 
 The following functions are implemented here
 
-/*
-** ------------------------------ STRING FUNCTIONS ----------------------------
-*/
+## STRING FUNCTIONS
 
 ```bash
 size_t	ft_strlen(char *str);
@@ -47,9 +45,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_strsplit(char const *s, char c);
 ```
 
-/*
-** ------------------------------ MEMORY FUNCTIONS ---------------------------
-*/
+## MEMORY FUNCTIONS
 
 ```bash
 void	*ft_memset(void *b, int c, size_t len);
@@ -62,10 +58,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 ```
-
-/*
-** ------------------------------ OUTPUT FUNCTIONS --------------------------
-*/
+## OUTPUT FUNCTIONS
 
 int		ft_putchar(int c);
 void	ft_putstr(char *str);
@@ -76,9 +69,7 @@ void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(const char *s, int fd);
 void	ft_putnbr_fd(int nb, int fd);
 
-/*
-** ------------------------------ BONUS FUNCTIONS --------------------------
-*/
+## BONUS FUNCTIONS
 
 ```bash
 t_list	*ft_lstnew(void const *content, size_t content_size);
@@ -87,10 +78,7 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **alst, t_list *new);
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 ```
-
-/*
-** ------------------------------ EXTRA FUNCTIONS --------------------------
-*/
+## EXTRA FUNCTIONS 
 
 ```bash
 int		ft_pow(int x, int y);
