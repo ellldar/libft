@@ -1,6 +1,9 @@
 # LIBFT
 
-This is the first project cadets supposed to do when they start the 42 School program. Basically, you have to build a `C library` that contains 65 functions.
+This is the first project cadets supposed to do when they start the 42 School program. 
+Basically, you have to build a `C library` that contains 65 functions.
+
+Most of the functions are common but you can look at the implementation of **ft_itoa** (I tried to make the most efficient version possible) and **ft_strsplit** which I did using chained lists (I forgot all about chained lists, so I used this function as a way to practice making chained lists).
 
 Below is the list of all the functions
 
