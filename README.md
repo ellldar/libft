@@ -8,6 +8,7 @@ The following functions are implemented here
 ** ------------------------------ STRING FUNCTIONS ----------------------------
 */
 
+```bash
 size_t	ft_strlen(char *str);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_strncmp(char *s1, char *s2, size_t n);
@@ -44,11 +45,13 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_strsplit(char const *s, char c);
+```
 
 /*
 ** ------------------------------ MEMORY FUNCTIONS ---------------------------
 */
 
+```bash
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -58,6 +61,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
+```
 
 /*
 ** ------------------------------ OUTPUT FUNCTIONS --------------------------
@@ -76,17 +80,21 @@ void	ft_putnbr_fd(int nb, int fd);
 ** ------------------------------ BONUS FUNCTIONS --------------------------
 */
 
+```bash
 t_list	*ft_lstnew(void const *content, size_t content_size);
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **alst, t_list *new);
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+```
 
 /*
 ** ------------------------------ EXTRA FUNCTIONS --------------------------
 */
 
+```bash
 int		ft_pow(int x, int y);
 int		ft_abs(int n);
 int		ft_get_int_len(int n);
 void	ft_listdel(t_wordloc *list);
+```
