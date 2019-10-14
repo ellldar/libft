@@ -3,7 +3,10 @@
 This is the first project cadets supposed to do when they start the 42 School program.<br/>
 Basically, you have to build a **`C library`** that contains 65 functions.
 
-Most of the functions are common but you can look at the implementation of **ft_itoa** (I tried to make the most efficient version possible) and **ft_strsplit** which I did using chained lists (I forgot all about chained lists, so I used this function as a way to practice making chained lists).
+Most of the functions are common but you can take a look at the implementation of the following functions because I used more creativity on them than usually: 
+* **ft_putnbr** - Previously, I was treating `-2,147,483,648` as a separate case. It doesn't get that special treatment anymore. Made the function more elegant. 
+* **ft_itoa** - I tried to make the most efficient version possible and I'm proud of it.
+* **ft_strsplit** - It's the most challenging function in the library. I did it using chained lists because I failed the `C Exam` because I forgot how to use chained lists. So, I made it even more challenging for myself. Basically, I used this most difficult function as a playground to bring back memories about chained lists. Now that I look back at the function, I can see that I should have used more generic functions for my lists and I see a way to make it more concise. But I want it to stay as it is. Because it was very difficult when I did it.
 
 Below is the list of all the functions
 
