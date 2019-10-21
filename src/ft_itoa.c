@@ -19,12 +19,14 @@ char	*ft_itoa(int n)
 	int		len;
 
 	len = ft_get_int_len(n);
-	ans = ft_strnew((size_t)(len + 1));
+	ans = ft_strnew((size_t)len);
+	if (!ans)
+		return (NULL);
 	ptr = ans;
 	if (n < 0 && len-- > 0)
 		*ptr++ = '-';
 	while (len-- > 0)
 		*ptr++ = ft_abs((n / ft_pow(10, len)) % 10) + '0';
 	*ptr = '\0';
-	return (ft_strlen(ans) ? ans : "0");
+	return (ans);
 }

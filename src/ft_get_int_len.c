@@ -14,7 +14,7 @@ int	ft_get_int_len(int n)
 {
 	int	len;
 
-	len = n < 0 ? 1 : 0;
+	len = n <= 0 ? 1 : 0;
 	while (n != 0)
 	{
 		n /= 10;

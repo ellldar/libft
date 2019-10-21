@@ -12,96 +12,77 @@
 
 #include "libft.h"
 
-static t_wordloc	*create_elem(void)
+t_list	*add_word(t_list *list, char *str)
 {
-	t_wordloc	*elem;
+	t_list	*cur;
 
-	elem = (t_wordloc*)malloc(sizeof(t_wordloc));
-	elem->i = 0;
-	elem->j = 0;
-	elem->next = NULL;
-	return (elem);
-}
-
-static void			resolve_header(t_wordloc **head, t_wordloc **current)
-{
-	if (!*head)
+	cur = list;
+	if (cur)
 	{
-		*current = create_elem();
-		*head = *current;
+		while (cur->next)
+			cur = cur->next;
+		cur->next = ft_lstnew(str, ft_strlen(str));
 	}
 	else
-	{
-		(*current)->next = create_elem();
-		*current = (*current)->next;
-	}
+		cur = ft_lstnew(str, ft_strlen(str));
+	return (list ? list : cur);
 }
 
-static t_wordloc	*get_coords(char *str, char c)
+size_t	count_words(t_list *list)
 {
-	t_wordloc	*current;
-	t_wordloc	*head;
-	int			i;
-	int			is_word;
+	size_t	res;
 
-	i = 0;
-	is_word = 0;
-	head = NULL;
-	while (*str)
+	res = 0;
+	while (list)
 	{
-		if ((*str == c || !*(str + 1)) && is_word)
-		{
-			current->j = *(str + 1) ? i - 1 : i;
-			is_word = 0;
-		}
-		else if (*str != c && !is_word)
-		{
-			resolve_header(&head, &current);
-			current->i = i;
-			is_word = 1;
-		}
-		i++;
-		str++;
+		list = list->next;
+		res++;
 	}
-	return (head);
+	return (res);
 }
 
-static	int			word_count(t_wordloc *words)
+char	**assign_words(t_list *list)
 {
-	int	n;
+	size_t	count;
+	char 	**ptr;
+	char 	**ans;
 
-	n = 0;
-	while (words)
-	{
-		n++;
-		words = words->next;
-	}
-	n += 1;
-	return (n);
-}
-
-char				**ft_strsplit(char const *s, char c)
-{
-	char		**ans;
-	char		**ptr;
-	t_wordloc	*words;
-	t_wordloc	*head;
-	int			len;
-
-	len = 0;
-	words = get_coords((char*)s, c);
-	head = words;
-	ans = (char**)ft_memalloc(sizeof(char *) * word_count(words));
+	count = count_words(list);
+	ans = (char**)malloc(sizeof(char*) * count);
 	ptr = ans;
-	while (words)
+	while (list)
 	{
-		len = words->j - words->i + 2;
-		*ptr = ft_strnew((size_t)len);
-		*ptr = ft_strcpy(*ptr, ft_strsub(s, words->i, (size_t)(len - 1)));
-		words = words->next;
+		*ptr = ft_strdup(list->content);
+		list = list->next;
 		ptr++;
 	}
-	ft_listdel(head);
-	*ptr = NULL;
+	return (ans);
+}
+
+char	**ft_strsplit(char const *s, char c)
+{
+	char	**ans;
+	size_t	len;
+	t_list	*list;
+	char 	*word;
+	char	*ptr;
+
+	len = 0;
+	list = NULL;
+	ptr = s ? (char*)s : NULL;
+	while(*ptr)
+	{
+		while(*ptr && *ptr == c)
+			ptr++;
+		len = 0;
+		while(*ptr && *ptr != c)
+		{
+			len++;
+			ptr++;
+		}
+		word = ft_strsub((char*)s, (ptr - s - len), len);
+		list = add_word(list, word);
+	}
+	ans = assign_words(list);
 	return (ans);
 }

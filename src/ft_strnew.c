@@ -19,11 +19,11 @@ char	*ft_strnew(size_t size)
 	size_t	i;
 
 	i = 0;
-	res = (char*)malloc(sizeof(char) * size);
+	res = (char*)malloc(sizeof(char) * (size + 1));
 	ptr = res;
 	if (!res)
 		return (NULL);
-	while (i++ < size)
+	while (i++ < size + 1)
 		*res++ = '\0';
 	return (ptr);
 }

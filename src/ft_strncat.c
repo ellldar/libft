@@ -12,21 +12,16 @@
 
 #include "libft.h"
 
-char	*ft_strncat(char *dest, char *src, int nb)
+char	*ft_strncat(char *dest, const char *src, size_t nb)
 {
 	char	*ans;
-	int		size;
-	int		i;
+	size_t	i;
 
 	i = ft_strlen(dest);
-	size = ft_strlen(dest) + ft_strlen(src) - nb + 1;
-	ans = (char*)malloc(sizeof(char) * size);
-	ans = ft_strcpy(ans, dest);
-	while (i < size)
-	{
-		ans[i] = src[i - ft_strlen(dest)];
-		i++;
-	}
-	ans[i] = '\0';
-	return (ans);
+	ans = dest + i;
+	i = 0;
+	while (*src && i++ < nb)
+		*ans++ = *(char*)src++;
+	*ans = '\0';
+	return (dest);
 }

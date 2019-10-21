@@ -41,16 +41,20 @@ typedef struct	s_list
 ** ------------------------------ STRING FUNCTIONS ----------------------------
 */
 
+/*
+** ------------------------------ STRING FUNCTIONS ----------------------------
+*/
+
 size_t	ft_strlen(char *str);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 char	*ft_strdup(char *src);
 char	*ft_strcpy(char *dest, char *src);
-char	*ft_strncpy(char *dest, char *src, unsigned int n);
-char	*ft_strcat(char *dest, char *src);
-char	*ft_strncat(char *dest, char *src, int nb);
-char	*ft_strstr(char *str, char *to_find);
-char	*ft_strnstr(char *str, char *to_find, int nb);
+char	*ft_strncpy(char *dest, char *src, size_t len);
+char	*ft_strcat(char *dest, const char *src);
+char	*ft_strncat(char *dest, const char *src, size_t nb);
+char	*ft_strstr(const char *str, const char *to_find);
+char	*ft_strnstr(const char *str, const char *to_find, size_t nb);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
@@ -60,6 +64,7 @@ int		ft_isdigit(int c);
 int		ft_isalpha(int c);
 int		ft_islower(int c);
 int		ft_isupper(int c);
+int		ft_isascii(int c);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 int		ft_atoi(const char *str);
@@ -77,6 +82,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_strsplit(char const *s, char c);
+char	**ft_split(char const *s, char c); // ------------------------ DELETE THIS ------------------
 
 /*
 ** ------------------------------ MEMORY FUNCTIONS ---------------------------
@@ -113,6 +119,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size);
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 /*

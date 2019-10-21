@@ -29,6 +29,8 @@ char		*ft_strtrim(char const *s)
 	j = ft_strlen(tmp) - 1;
 	while (is_whitespace(tmp[i]))
 		i++;
+	if (i == ft_strlen((char*)s))
+		return ("");
 	while (is_whitespace(tmp[j]))
 		j--;
 	if (!(ans = ft_strnew(j - i + 2)))

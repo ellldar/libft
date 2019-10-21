@@ -29,24 +29,35 @@ void	test(void *dst, const void *src, size_t n)
 
 int		main(void)
 {
-	test("Arman", "World", 0);
-	test("Arman", "World", 3);
-	test("Arman", "World", 5);
-	test("Arman", "World", 10);
-	test("Arman", "", 0);
-	test("Arman", "", 2);
-	test("Arman", "", 5);
-	test("Arman", "", 10);
-	test("", "World", 0);
-	test("", "World", 2);
-	test("", "World", 5);
-	test("", "World", 10);
-	test("", "", 0);
-	test("", "", 5);
-	test("", "", 10);
-	test("This is incredible", "World", 0);
-	test("This is incredible", "World", 5);
-	test("This is incredible", "World", 15);
-	test("This is incredible", "World", 25);
+	char dst1[0xF0];
+	char dst2[0xF0];
+	char *data = "thiß ß\xde\xad\xbe\xeftriñg will be øvérlapéd !\r\n";
+	int size = 0xF0 - 0xF;
+
+	memset(dst1, 'A', sizeof(dst1));
+	memset(dst2, 'A', sizeof(dst2));
+	memcpy(dst1, data, ft_strlen(data));
+	memcpy(dst2, data, ft_strlen(data));
+
+	test(dst2 + 3, dst2, size);
+//	test("Arman", "World", 0);
+//	test("Arman", "World", 3);
+//	test("Arman", "World", 5);
+//	test("Arman", "World", 10);
+//	test("Arman", "", 0);
+//	test("Arman", "", 2);
+//	test("Arman", "", 5);
+//	test("Arman", "", 10);
+//	test("", "World", 0);
+//	test("", "World", 2);
+//	test("", "World", 5);
+//	test("", "World", 10);
+//	test("", "", 0);
+//	test("", "", 5);
+//	test("", "", 10);
+//	test("This is incredible", "World", 0);
+//	test("This is incredible", "World", 5);
+//	test("This is incredible", "World", 15);
+//	test("This is incredible", "World", 25);
 	return (0);
 }

@@ -14,37 +14,22 @@
 
 void	test(char *dst, const char *src, int nb)
 {
-	size_t	res1, res2;
+	size_t res1, res2;
+	char *ans1 = (char *) malloc(nb);
+	char *ans2 = (char *) malloc(nb);
 
-	res1 = strlcat(dst, src, nb);
-	res2 = ft_strlcat(dst, src, nb);
-	printf("Length | '%s' ==> %zu\n", dst, ft_strlen(dst));
-	printf("Length | '%s' ==> %zu\n", src, ft_strlen((char*)src));
-	printf("strlcat(%s, %s, %i) ==> %zu\n", dst, src, nb, res1);
-	printf("ft_strlcat(%s, %s, %i) ==> %zu\n\n", dst, src, nb, res2);
+	ft_strcpy(ans1, dst);
+	ft_strcpy(ans2, dst);
+	res1 = strlcat(ans1, src, nb);
+	res2 = ft_strlcat(ans2, src, nb);
+	printf("BUFF_SIZE = %i\n", nb);
+	printf("---------------------------------\n");
+	printf("strlcat\t\t -> %s | %zu vs %zu\n", ans1, res1, strlen((char*)ans1));
+	printf("ft_strlcat\t -> %s | %zu vs %zu\n\n", ans2, res2, ft_strlen((char*)ans2));
 }
 
 int		main(void)
 {
-	int		i;
 
-	i = 0;
-	printf("----------------  TEST 1  ----------------------- \n");
-	while (i < 6) {
-		test("Santa", "Maria", i);
-		i++;
-	}
-	printf("----------------  TEST 2  ----------------------- \n");
-	i = 0;
-	while (i < 6) {
-		test("Santa", "", i);
-		i++;
-	}
-	printf("----------------  TEST 3  ----------------------- \n");
-	i = 0;
-	while (i < 1) {
-		test("", "Maria", i);
-		i++;
-	}
 	return (0);
 }

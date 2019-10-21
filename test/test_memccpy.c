@@ -36,19 +36,22 @@ void	test(char *str1, char *str2, int c, size_t n)
 
 int		main(void)
 {
-	test("Wonderful World", "Incredible", 'a', 5);
-	test("Wonderful World", "Incredible", 'x', 5);
-	test("Wonderful World", "Incredible", 'd', 5);
-	test("Wonderful World", "Incredible", 'e', 5);
-	test("Wonderful World", "Work", 'k', 0);
-	test("Wonderful World", "Work", 'k', 2);
-	test("Wonderful World", "Work", 'k', 3);
-	test("Wonderful World", "Work", 'k', 4);
-	test("Wonderful World", "Work", 'k', 15);
-	test("Wonderful World", "Eldar", 'r', 0);
-	test("Wonderful World", "Eldar", 'r', 1);
-	test("Wonderful World", "Eldar", 'r', 5);
-	test("Wonderful World", "Eldar", 'r', 15);
-	test("Sex", "Eldar", 'r', 15);
+//	test("Wonderful World", "Incredible", 'a', 5);
+//	test("Wonderful World", "Incredible", 'x', 5);
+//	test("Wonderful World", "Incredible", 'd', 5);
+//	test("Wonderful World", "Incredible", 'e', 5);
+//	test("Wonderful World", "Work", 'k', 0);
+//	test("Wonderful World", "Work", 'k', 2);
+//	test("Wonderful World", "Work", 'k', 3);
+//	test("Wonderful World", "Work", 'k', 4);
+//	test("Wonderful World", "Work", 'k', 15);
+//	test("Wonderful World", "Eldar", 'r', 0);
+//	test("Wonderful World", "Eldar", 'r', 1);
+//	test("Wonderful World", "Eldar", 'r', 5);
+//	test("Wonderful World", "Eldar", 'r', 15);
+//	test("Sex", "Eldar", 'r', 15);
+	test("abcdefghijklmnopqrstuvwxyz", "string with\200inside !", '\200', 21);
+	test("abcdefghijklmnopqrstuvwxyz", "string with\200inside !", 0600, 21);
+	test("the cake is a lie !\\0I'm hidden lol\\r\\n", "test basic !", ' ', ft_strlen("test basic !"));
 	return (0);
 }

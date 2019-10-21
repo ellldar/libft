@@ -19,7 +19,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = (size_t)start;
-	ans = ft_memalloc(len + 2);
+	ans = ft_memalloc(len + 1);
 	if (i + len <= ft_strlen((char*)s))
 	{
 		if (ans && (ptr = ans))

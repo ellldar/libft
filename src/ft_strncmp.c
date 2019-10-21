@@ -20,12 +20,12 @@ int	ft_strncmp(char *s1, char *s2, size_t n)
 	while (*s1 && *s2 && i < n)
 	{
 		if (*s1 != *s2)
-			return (*s1 - *s2);
+			break ;
 		s1++;
 		s2++;
 		i++;
 	}
 	if (i == n)
 		return (0);
-	return (*s1 - *s2);
+	return (*(unsigned char*)s1 - *(unsigned char*)s2);
 }

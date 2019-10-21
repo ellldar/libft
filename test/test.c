@@ -43,6 +43,7 @@ int     main(int argc, char **argv)
 
         // -------------------------------- ft_strcat --------------------------------------------------------
         printf("ft_strcat : %s\n", ft_strcat("Hello", " World!"));
+        printf("ft_strcat : %s\n", ft_strcat("there is no stars in the sky", "the cake is a lie !\0I'm hidden lol\r\n"));
 
         // -------------------------------- ft_strncat -------------------------------------------------------
         printf("ft_strncat : %s\n", ft_strncat("Hello", " World!", 4));

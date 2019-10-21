@@ -15,9 +15,23 @@
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*ans;
+	t_list	*ptr;
 
+	ptr = NULL;
 	if (lst && f)
-		if ((ans = f(lst)) && lst->next)
-			ans->next = ft_lstmap(lst->next, f);
-	return (ans);
+		while (lst)
+		{
+			if (!ans)
+			{
+				ans = f(lst);
+				ptr = ans;
+			}
+			else
+			{
+				ans->next = f(lst);
+				ans = ans->next;
+			}
+			lst = lst->next;
+		}
+	return (ptr);
 }

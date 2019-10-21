@@ -19,7 +19,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	tmp1 = &(*dst);
 	tmp2 = &(*src);
-	while ((*tmp1 || *tmp2) && n-- > 0)
+	if (!tmp1 && !tmp2)
+		return (NULL);
+	while (n-- > 0)
 		*(tmp1++) = *(tmp2++);
 	return (dst);
 }

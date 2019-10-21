@@ -15,7 +15,6 @@
 char	*ft_strrchr(const char *str, int c)
 {
 	char	*tmp;
-	int		i;
 
 	tmp = (0);
 	while (*str)

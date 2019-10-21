@@ -16,16 +16,11 @@ char	*ft_strdup(char *src)
 {
 	char	*tmp;
 	int		size;
-	int		i;
 
 	size = ft_strlen(src) + 1;
 	tmp = (char*)malloc(sizeof(char) * size);
-	i = 0;
-	while (i < size - 1)
-	{
-		tmp[i] = src[i];
-		i++;
-	}
-	tmp[i] = '\0';
+	if (!tmp)
+		return (NULL);
+	tmp = ft_strcpy(tmp, src);
 	return (tmp);
 }

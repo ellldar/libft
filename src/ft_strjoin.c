@@ -17,8 +17,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*ans;
 	size_t	size;
 
-	size = ft_strlen((char*)s1) + ft_strlen((char*)s2) + 1;
+	size = ft_strlen((char*)s1) + ft_strlen((char*)s2);
 	ans = ft_strnew(size);
-	ans = ft_strcat((char*)s1, (char*)s2);
+	if (ans)
+		ft_strcat(ft_strcpy(ans, (char*)s1), (char*)s2);
 	return (ans);
 }
