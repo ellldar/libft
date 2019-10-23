@@ -1,9 +1,12 @@
 # LIBFT
 
 This is the first project cadets supposed to do when they start the 42 School program.<br/>
-Basically, you have to build a `C library` that contains 65 functions.
+Basically, you have to build a **`C library`** that contains 65 functions.
 
-Most of the functions are common but you can look at the implementation of **ft_itoa** (I tried to make the most efficient version possible) and **ft_strsplit** which I did using chained lists (I forgot all about chained lists, so I used this function as a way to practice making chained lists).
+Most of the functions are common but you can take a look at the implementation of the following functions because I used more creativity on them than usually: 
+* **ft_putnbr** - Previously, I was treating `-2,147,483,648` as a separate case. It doesn't get that special treatment anymore. Made the function more elegant. 
+* **ft_itoa** - I tried to make the most efficient version possible and I'm proud of it.
+* **ft_strsplit** - It's the most challenging function in the library. I did it using chained lists because I failed the `C Exam` because I forgot how to use chained lists. So, I made it even more challenging for myself. Basically, I used this most difficult function as a playground to bring back memories about chained lists. Now that I look back at the function, I can see that I should have used more generic functions for my lists and I see a way to make it more concise. But I want it to stay as it is. Because it was very difficult when I did it.
 
 Below is the list of all the functions
 
@@ -90,4 +93,26 @@ int	ft_pow(int x, int y);
 int	ft_abs(int n);
 int	ft_get_int_len(int n);
 void	ft_listdel(t_wordloc *list);
+```
+
+### Test files ###
+
+I also made my own test files. Here's the list or you can look up the names in the `Makefile`
+
+```bash
+test test1 test2 test_strnstr test_strcmp test_strlcat test_memset
+test_bzero test_memcpy test_memccpy test_memmove test_memchr
+test_atoi test_putstr test_putnbr test_strnew test_memalloc
+test_memdel test_striter test_striteri test_strmap test_strmapi
+test_strequ test_strnequ test_strsub test_strtrim test_strjoin
+test_putendl test_fd test_itoa test_strsplit test_lstmap
+```
+To use tests you just need to type the following (you must be in the `libft/` folder not the `test/`):
+
+```bash
+how to use:
+  make <test_name>
+  
+example:
+  make test_itoa
 ```
