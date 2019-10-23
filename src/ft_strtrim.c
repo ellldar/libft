@@ -19,22 +19,18 @@ static int	is_whitespace(char c)
 
 char		*ft_strtrim(char const *s)
 {
-	char	*tmp;
 	char	*ans;
-	size_t	i;
-	size_t	j;
+	size_t	len;
 
-	tmp = (char*)s;
-	i = 0;
-	j = ft_strlen(tmp) - 1;
-	while (is_whitespace(tmp[i]))
-		i++;
-	if (i == ft_strlen((char*)s))
-		return ("");
-	while (is_whitespace(tmp[j]))
-		j--;
-	if (!(ans = ft_strnew(j - i + 2)))
+	len = 0;
+	if (!s)
 		return (NULL);
-	ans = ft_strsub(tmp, (int)i, j - i + 1);
+	while (*s && is_whitespace(*s))
+		s++;
+	len = ft_strlen((char*)s) - 1;
+	while (*s && is_whitespace(s[len]))
+		len--;
+	if (!(ans = ft_strsub(s, 0, len + 1)))
+		return (NULL);
 	return (ans);
 }

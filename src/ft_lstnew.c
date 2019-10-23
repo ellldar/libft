@@ -19,7 +19,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	elem = (t_list*)malloc(sizeof(t_list));
 	if (elem)
 	{
-		elem->content = ft_memalloc(content_size);
+		elem->content = (char*)malloc(sizeof(char) * content_size);
 		if (!elem->content)
 			ft_memdel((void**)elem);
 	}
