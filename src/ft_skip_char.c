@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_listdel.c                                       :+:      :+:    :+:   */
+/*   ft_skip_char.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esupatae <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 00:23:44 by esupatae          #+#    #+#             */
-/*   Updated: 2019/10/10 00:26:27 by esupatae         ###   ########.fr       */
+/*   Created: 2019/10/23 02:44:30 by esupatae          #+#    #+#             */
+/*   Updated: 2019/10/23 02:44:33 by esupatae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_listdel(t_wordloc *list)
+int	ft_skip_char(char **ptr, char c)
 {
-	t_wordloc	*tmp;
+	char *s;
 
-	while (list)
-	{
-		tmp = list;
-		list = list->next;
-		free(tmp);
-	}
+	if (!ptr || !*ptr)
+		return (0);
+	s = *ptr;
+	while (*s == c)
+		s++;
+	*ptr = s;
+	return (*s != '\0' ? 1 : 0);
 }

@@ -14,15 +14,22 @@
 
 void	test(char *str, char c)
 {
-	char	**ans;
+	char    **ans;
+	char    *tmp;
+	char    **head;
 
-	ans = ft_strsplit(str, c);
-	while(ans && *ans && ft_strcmp(*ans, "\0"))
+	if ((ans = ft_strsplit(str, c)))
+	    head = ans;
+	printf("%s, '%c'\n", str, c);
+	printf("-------------------------------------------------------------\n");
+	while(ans && *ans && **ans != '\0')
 	{
 		printf("%s, ", *ans);
+		tmp = *ans;
 		ans++;
+		free(tmp);
 	}
-	printf("\n");
+	printf("\n\n");
 }
 
 int	main(void)
@@ -36,31 +43,12 @@ int	main(void)
 	test("0 0 0 0 0 0 0 0 0", ' ');
 	test("split  ||this|for|me|||||!|", '|');
 	test("      split       this for   me  !       ", ' ');
-	test("      split       this for   me  !       ", ' ');
+	test("***salut****!**", '*');
+	test("*****", '*');
+	test("coucou", '*');
+	test("salut****", '*');
+	test("****salut", '*');
+	test("", '*');
+
 	return (0);
 }
-
-/*
-int		main(int argc, char** argv)
-{
-	char **ans;
-
-	if (argc == 3)
-	{
-		ans = ft_strsplit(argv[1], argv[2][0]);
-		while (*ans)
-		{
-			if (*(ans + 1))
-				printf("%s, ", *ans);
-			else
-				printf("%s\n", *ans);
-			ans++;
-		}
-	}
-	else
-	{
-		printf("Nothing to show!\n");
-	}
-	return (0);
-}
- */

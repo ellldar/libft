@@ -46,5 +46,5 @@ test2:
 	@./$(OUT) | cat -e
 
 $(TEST_CASES):
-	@gcc $@.c $(SRCS) -I $(HEADER) -g
+	@gcc $@.c $(SRCS) -I $(HEADER)
 	@./$(OUT)

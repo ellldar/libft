@@ -20,21 +20,13 @@
 # include <ctype.h>
 # include <libc.h>
 
-typedef struct s_wordloc	t_wordloc;
 typedef struct s_list		t_list;
-
-typedef struct s_wordloc
-{
-	int 		j;
-	int			i;
-	t_wordloc	*next;
-}				t_wordloc;
 
 typedef struct	s_list
 {
-	void	*content;
-	size_t	content_size;
-	t_list	*next;
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
 }				t_list;
 
 /*
@@ -82,7 +74,6 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_strsplit(char const *s, char c);
-char	**ft_split(char const *s, char c); // ------------------------ DELETE THIS ------------------
 
 /*
 ** ------------------------------ MEMORY FUNCTIONS ---------------------------
@@ -129,6 +120,6 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int		ft_pow(int x, int y);
 int		ft_abs(int n);
 int		ft_get_int_len(int n);
-void	ft_listdel(t_wordloc *list);
+int		ft_skip_char(char **ptr, char c);
 
 #endif

@@ -1,6 +1,7 @@
-._.DS_Store
-.DS_Store
+._*
+*.swp
+.DS*
+.nfs*
 .idea
 *.o
-*.out
-a.out.dSYM/
+a.out*
