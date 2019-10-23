@@ -7,6 +7,7 @@ Most of the functions are common but you can take a look at the implementation o
 * **ft_putnbr** - Previously, I was treating `-2,147,483,648` as a separate case. It doesn't get that special treatment anymore. Made the function more elegant. 
 * **ft_itoa** - I tried to make the most efficient version possible and I'm proud of it.
 * **ft_strsplit** - It's the most challenging function in the library. I did it using chained lists because I failed the `C Exam` because I forgot how to use chained lists. So, I made it even more challenging for myself. Basically, I used this most difficult function as a playground to bring back memories about chained lists. ~~Now that I look back at the function, I can see that I should have used more generic functions for my lists and I see a way to make it more concise. But I want it to stay as it is. Because it was very difficult when I did it.~~ `UPDATE:` After finishing the bonus part of the libft, I remade the strsplit using more generic linked list functions.
+* **ft_strlcat** - This one was also a bit challenging. It took some time to figure out what this function does exactly. I think I nailed.
 
 Below is the list of all the functions
 
@@ -84,6 +85,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size);
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **alst, t_list *new);
+void  ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 ```
 ## Extra functions
