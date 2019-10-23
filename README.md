@@ -6,7 +6,7 @@ Basically, you have to build a **`C library`** that contains 65 functions.
 Most of the functions are common but you can take a look at the implementation of the following functions because I used more creativity on them than usually: 
 * **ft_putnbr** - Previously, I was treating `-2,147,483,648` as a separate case. It doesn't get that special treatment anymore. Made the function more elegant. 
 * **ft_itoa** - I tried to make the most efficient version possible and I'm proud of it.
-* **ft_strsplit** - It's the most challenging function in the library. I did it using chained lists because I failed the `C Exam` because I forgot how to use chained lists. So, I made it even more challenging for myself. Basically, I used this most difficult function as a playground to bring back memories about chained lists. Now that I look back at the function, I can see that I should have used more generic functions for my lists and I see a way to make it more concise. But I want it to stay as it is. Because it was very difficult when I did it.
+* **ft_strsplit** - It's the most challenging function in the library. I did it using chained lists because I failed the `C Exam` because I forgot how to use chained lists. So, I made it even more challenging for myself. Basically, I used this most difficult function as a playground to bring back memories about chained lists. ~~Now that I look back at the function, I can see that I should have used more generic functions for my lists and I see a way to make it more concise. But I want it to stay as it is. Because it was very difficult when I did it.~~ `UPDATE:` After finishing the bonus part of the libft, I remade the strsplit using more generic linked list functions.
 
 Below is the list of all the functions
 
@@ -92,7 +92,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int	ft_pow(int x, int y);
 int	ft_abs(int n);
 int	ft_get_int_len(int n);
-void	ft_listdel(t_wordloc *list);
+int	ft_char_skip(char **ptr, char c);
 ```
 
 ### Test files ###
