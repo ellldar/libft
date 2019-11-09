@@ -1,5 +1,8 @@
 # LIBFT
 
+**`UPDATE!`** This project contains just the original project requirements, all bonus functions and some extra functions.<br/>
+It includes some of the test files for your convenience. However, it's not organized as per turn-in requirements.
+
 This is the first project cadets supposed to do when they start the 42 School program.<br/>
 Basically, you have to build a **`C library`** that contains 65 functions.
 
