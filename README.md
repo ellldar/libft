@@ -16,7 +16,7 @@ Below is the list of all the functions
 
 ## String functions
 
-```bash
+```c
 size_t	ft_strlen(char *str);
 int	ft_strcmp(char *s1, char *s2);
 int	ft_strncmp(char *s1, char *s2, size_t n);
@@ -57,7 +57,7 @@ char	**ft_strsplit(char const *s, char c);
 
 ## Memory functions
 
-```bash
+```c
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -70,7 +70,7 @@ void	ft_memdel(void **ap);
 ```
 ## Output functions
 
-```bash
+```c
 int	ft_putchar(int c);
 void	ft_putstr(char *str);
 void	ft_putnbr(int nb);
@@ -83,7 +83,7 @@ void	ft_putnbr_fd(int nb, int fd);
 
 ## Bonus functions
 
-```bash
+```c
 t_list	*ft_lstnew(void const *content, size_t content_size);
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -93,7 +93,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 ```
 ## Extra functions
 
-```bash
+```c
 int	ft_pow(int x, int y);
 int	ft_abs(int n);
 int	ft_get_int_len(int n);
@@ -104,7 +104,7 @@ int	ft_char_skip(char **ptr, char c);
 
 I also made my own test files. Here's the list or you can look up the names in the `Makefile`
 
-```bash
+```c
 test test1 test2 test_strnstr test_strcmp test_strlcat test_memset
 test_bzero test_memcpy test_memccpy test_memmove test_memchr
 test_atoi test_putstr test_putnbr test_strnew test_memalloc
